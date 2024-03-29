@@ -1,11 +1,14 @@
 {
   "name": "waqqly24mar",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

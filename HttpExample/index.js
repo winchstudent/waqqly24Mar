@@ -1,5 +1,4 @@
 const sql = require('mssql');
-
 const sqlConfig = {
   user: 'azureuser',
   password: 'waqqly1!',
@@ -11,39 +10,34 @@ const sqlConfig = {
     idleTimeoutMillis: 30000
   }
 };
-module.exports = async function (context, req) {
-var walkername = req.query.walkername || req.body.walkername;
-var walkeremail = req.query.walkeremail || req.body.walkeremail;
-var walkerlocation = req.query.walkerlocation || req.body.walkerlocation;
-};
-
 const insertWalker = async (walker) => {
   try {
     await sql.connect(sqlConfig);
-    const result = await sql.query("INSERT INTO [dbo].[dogwalkertabletesttwo] (walkername, walkeremail, walkerlocation) VALUES ("+"'"+walkername+"', '"+walkeremail+"', '"+walkerlocation+"');");
+    const result = await sql.query(`INSERT INTO [dbo].[dogwalkertabletesttwo] (walkername, walkeremail, walkerlocation) VALUES ('${walker.walkername}', '${walker.walkeremail}', '${walker.walkerlocation}');`);
+    console.log("Inserted walker with iD: ", result.recordset[0].id);
   } catch (err) {
     console.log("Error inserting walker: ", err);
   }
 }
 
 module.exports = async function (context, req) {
-
-  // const walkername = req.query.walkername || req.body.walkername;
-  // const walkeremail = req.query.walkeremail || req.body.walkeremail;
-  // const walkerlocation = req.query.walkerlocation || req.body.walkerlocation;
-    const walkername = "name"
-    const walkeremail = "email"
-    const walkerlocation = "location"
-    const walker = {
-    walkername, 
+  const walkername = req.query.walkername || req.body.walkername;
+  const walkeremail = req.query.walkeremail || req.body.walkeremail;
+  const walkerlocation = req.query.walkerlocation || req.body.walkerlocation;
+  if (!walkername || !walkeremail || !walkerlocation) {
+    context.res = {
+      status: 400,
+      body: "Please provide walkername, walkeremail, and walkerlocation in the request."
+    };
+    return;
+  }
+  const walker = {
+    walkername,
     walkeremail,
     walkerlocation
   };
-
   await insertWalker(walker);
-  
   context.res = {
     body: "Walker inserted."
   };
-
 }
