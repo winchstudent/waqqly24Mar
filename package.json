@@ -6,7 +6,6 @@
     "test": "echo \"No tests yet...\""
   },
   "devDependencies": {},
-  "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
