@@ -60,6 +60,11 @@ Verify the values have been received in the Azure SQL Database.
 
 - mssql: Module for connecting to Microsoft SQL Server from Node.js
 
+## Website: 
+
+The website details can be found here https://github.com/winchstudent/waqqly24Mar/tree/main/website
+This included the graphics
+
 ## Contributing:
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
