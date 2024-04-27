@@ -22,9 +22,19 @@ git clone https://github.com/winchstudent/waqqly24Mar.git
 npm install mssql
 ```
 
-3. As this is a Node.js application, it requires the install of Node.js itself. Please install via the nodejs website https://nodejs.org/en/download
+3. As this is a Node.js application, it requires the installation of Node.js itself. Please install via the nodejs website https://nodejs.org/en/download
 
 4. Ensure that you have an Azure SQL Database set up with the appropriate credentials. Update the sqlConfig object in index.js with your Azure SQL Database credentials.
+
+## Deployment
+
+The solution comprises three components: 
+
+1. an external webpage
+2. an Azure Function
+3. an Azure SQL Database
+
+These components are deployed across three Azure services. The HTML webpage is hosted on Azure Storage, the database is provisioned and deployed on Azure SQL Database, and the function responsible for transferring data from the website to the database is deployed as an Azure Function.
 
 ## Usage
 
@@ -44,12 +54,12 @@ Code Structure:
 - context and req: Parameters passed to the Azure Function representing the execution context and HTTP request
 
 ## Testing:
-To test the function is working, when running the function in VSC, use the string below as the input:
+To test whether the function is working, when running the function in VSC, use the string below as the input:
 
 ```javascript
 walkername=NameTest&walkeremail=EmailTest%40Email.com&walkerlocation=LocationTest
 ```
-The function will take the input and isolate the values for name, email and location
+The function will take the input and isolate the values for name, email, and location
 - walkername=NameTest
 - walkeremail=EmailTest@Email.com
 - walkerlocation=LocationTest
