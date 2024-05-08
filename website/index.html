@@ -47,22 +47,6 @@
         <label>Log your details to register as a dog walker</label>
         <br />
         <br />
-        <!-- <form action="https://summativewaqqly.azurewebsites.net/api/httpexample/" method="POST">
-            <label>Your Name &ensp; &emsp; </label> 
-            <input type="text" style="width: 100;" name="walkername" placeholder="Walker's Name...">
-            <br />
-            <label>Your Email &ensp; &emsp; </label> 
-            <input type="text" name="walkeremail" placeholder="Your Email...">
-            <br />
-            <label>Your Location &ensp; &emsp; </label> 
-            <input type="text" style="width: 100;" name="walkerlocation" placeholder="Your Location...">
-            <br />
-            <br />
-            <button type="submit">Submit my form</button>
-            <br />
-            <button type="clear">Clear my form</button>
-            <br /> -->
-
 
             <form method="post" action="https://summativewaqqly.azurewebsites.net/api/httpexample">
                 <div class="form-group">
@@ -83,6 +67,25 @@
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 <button type="reset" class="btn btn-primary btn-block">Clear</button>
             </form>
-        <img id="cutefooter" src="cutefooter.jpg" style="width: 100%;">
+
+            <form method="post" action="https://summativewaqqlyowner.azurewebsites.net/api/httptriggerowner">
+                <div class="form-group">
+                    <label for="ownername">Pet Parents Name</label>
+                    <input type="text" class="form-control" id="ownername" name="ownername" placeholder="Enter your name" required="required" />
+                </div>
+                          
+                <div class="form-group">
+                    <label for="owneremail">Pet Parents Email</label>
+                    <input type="email" class="form-control" id="owneremail" name="owneremail" placeholder="Enter your email" required="required" />
+                </div>
+                          
+                <div class="form-group">
+                    <label for="ownerpetname">Your Pets Name</label>
+                    <input type="text" class="form-control" id="ownerpetname" name="ownerpetname" placeholder="Enter your pets name" required="required" />
+                </div>
+                          
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="reset" class="btn btn-primary btn-block">Clear</button>
+            </form>
     </body>
 </html>
