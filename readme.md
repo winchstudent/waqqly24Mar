@@ -31,7 +31,7 @@ npm install mssql
 The solution comprises three components: 
 
 1. an external webpage
-2. an Azure Function
+2. two Azure Functions (1) HttpExample: the original dog walker function (2) HttpTriggerOwner: the dog owner function
 3. an Azure SQL Database
 
 These components are deployed across three Azure services. The HTML webpage is hosted on Azure Storage, the database is provisioned and deployed on Azure SQL Database, and the function responsible for transferring data from the website to the database is deployed as an Azure Function.
